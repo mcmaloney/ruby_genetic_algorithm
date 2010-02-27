@@ -1,3 +1,10 @@
+# TODO:
+#
+# 1. Make the 'nix_upper_half' function smarter. Cut on an average? Use a STDEV into the good ones? Work a regression in somehow?
+# 2. Make the mutation rate slow down as it starts to converge. Getting some oscillation as we get close to convergence probably because that rate's always the same.
+# 3. Try to decompose the 'mate' function a little more. Seems like it's doing too much.
+# 4. Roll 'make_next_gen' into 'mate'? Have to remove it from ga_run's loop if you do this.
+
 module GA
   POPSIZE = 2048
   MUTATION_THRESH = 100
@@ -86,6 +93,7 @@ module GA
     end
   end
   
+  # How can this be decomposed?
   def self.mate
     @children = []
     while @children.length < POPSIZE
@@ -105,6 +113,7 @@ module GA
     @children
   end
   
+  # Maybe roll this into the end of the 'mate' function?
   def self.make_next_gen
     @population.citizens = @children
   end

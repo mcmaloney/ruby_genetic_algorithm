@@ -10,7 +10,7 @@ def loop_it
   while GA.population.citizens[0].fitness != 0
     GA.nix_upper_half
     GA.mate
-    GA.make_next_gen
+    GA.make_next_gen # Take this guy out if you roll it into the 'mate' function.
     GA.calc_fitness
     GA.sort_by_fitness
     GA.print_best
