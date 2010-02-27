@@ -1,0 +1,27 @@
+What It Does:
+
+This is a very basic genetic algorithm. You provide the program with a target string, then have it generate its own training data randomly with characters from the same family as the target. (Example- here I'm using the family of ASCII characters from SPACE to lower-case z.)
+
+Once it has its random data set, it then evolves toward the target through fitness-based selection, mating and mutation. The fitness score given to each Citizen object (in the Population) is just a way to determine how much like the target it is. A low or near-zero fitness score means that the Citizen object is more like the target than one with a higher score. As you watch the population evolve, the fitness score of the best Citizen of one generation will get smaller until it actually reaches zero, or hits the target.
+
+
+Usage:
+
+In this directory:
+
+irb
+require 'ga_run'
+start_it
+loop_it
+
+'start_it' outputs the entire initial population. Don't worry. Just clear your screen and loop_it.
+
+Messing With It:
+
+- The Target value (a string, in this case) is specified at the top of ga.rb. Change this to your name or the name of a pet; enjoy convergence.
+
+- I have a really shitty mutation rate thingey in here because I was really interested in making this work, not optimizing it just yet. 
+
+- Yadda yadda- you see what I'm getting at. Change the constants in ga.rb and different stuff will happen.
+
+
